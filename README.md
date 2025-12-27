@@ -4,6 +4,8 @@
 
 Script untuk mengisi otomatis semua kuesioner dosen pengampu dengan nilai yang dapat dikonfigurasi (1-5) pada halaman Kartu Hasil Studi (KHS) di Academic Integrated System (AIS) Universitas Mulawarman.
 
+> 🎯 **Quick Start**: Install via [GreasyFork](https://greasyfork.org/en/scripts/560439-autofill-kuesioner-dosen-ais-unmul) atau download dari GitHub, lalu klik tombol hijau di pojok kanan atas halaman KHS!
+
 ## 📚 Daftar Isi
 
 - [🎯 Apa Itu Script Ini?](#-apa-itu-script-ini)
@@ -11,7 +13,6 @@ Script untuk mengisi otomatis semua kuesioner dosen pengampu dengan nilai yang d
 - [⚙️ Konfigurasi Nilai](#️-konfigurasi-nilai)
 - [🚀 Instalasi](#-instalasi)
 - [📖 Cara Penggunaan](#-cara-penggunaan)
-- [🖼️ Screenshot](#️-screenshot)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [⚠️ Peringatan & Etika](#️-peringatan--etika)
 - [🤝 Kontribusi](#-kontribusi)
@@ -87,7 +88,7 @@ Script ini memungkinkan kamu untuk mengatur nilai yang akan digunakan untuk meng
 
 Ada 2 cara untuk mengubah nilai:
 
-**Cara 1: Menggunakan Tombol Setting (Paling Mudah)**
+**Cara 1: Menggunakan Tombol Setting (Paling Mudah)** ⭐
 
 1. Buka halaman KHS
 2. Lihat di pojok kanan atas, ada 2 tombol:
@@ -98,13 +99,15 @@ Ada 2 cara untuk mengubah nilai:
 5. Klik OK
 6. Nilai akan tersimpan dan digunakan untuk autofill selanjutnya
 
+> 💡 **Tips**: Nilai yang sudah di-set akan tersimpan di browser dan digunakan untuk autofill selanjutnya, jadi tidak perlu set ulang setiap kali.
+
 **Cara 2: Mengedit Kode Script**
 
-1. Buka Tampermonkey Dashboard
+1. Buka Tampermonkey Dashboard (klik ikon Tampermonkey → Dashboard)
 2. Klik script "Autofill Kuesioner Dosen AIS Unmul"
 3. Cari baris yang berisi: `const DEFAULT_KUISIONER_VALUE = 5;`
 4. Ubah angka 5 menjadi nilai yang diinginkan (1-5)
-5. Save (Ctrl+S)
+5. Save (Ctrl+S atau Cmd+S di Mac)
 6. Refresh halaman KHS
 
 **Cara 3: Menggunakan Console (Advanced)**
@@ -113,7 +116,7 @@ Ada 2 cara untuk mengubah nilai:
 2. Buka Developer Console (F12)
 3. Ketik: `setKuisionerValue(3)` (ganti 3 dengan nilai yang diinginkan)
 4. Tekan Enter
-5. Nilai akan tersimpan dan digunakan selanjutnya
+5. Nilai akan tersimpan dan digunakan untuk autofill selanjutnya
 
 ### Untuk Console Script
 
@@ -177,7 +180,7 @@ autoFillAllKuisioner(4);
    - **Opera/Safari**: Cari di extension store browser masing-masing
 
 2. **Install Script dari GreasyFork**
-   - Klik link berikut: `[LINK_GREASYFORK_PLACEHOLDER]`
+   - Klik link berikut: [Install dari GreasyFork](https://greasyfork.org/en/scripts/560439-autofill-kuesioner-dosen-ais-unmul)
    - Klik tombol "Install this script"
    - Klik "Install" di dialog konfirmasi Tampermonkey
    - Script siap digunakan! ✅
@@ -232,12 +235,15 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
    - Copy seluruh isi file
    - Paste ke console browser
    - Tekan **Enter**
+   - Akan muncul pesan konfirmasi bahwa script sudah siap digunakan
 
 4. **Jalankan Fungsi**
-   - Untuk autofill semua: ketik `autoFillAllKuisioner()` lalu Enter
+   - Untuk autofill semua dengan nilai default: ketik `autoFillAllKuisioner()` lalu Enter
+   - Untuk autofill semua dengan nilai spesifik: ketik `autoFillAllKuisioner(4)` lalu Enter (ganti 4 dengan nilai yang diinginkan)
    - Untuk autofill satu kuesioner: ketik `autoFillKuisioner()` lalu Enter
+   - Untuk mengubah nilai default: ketik `setKuisionerValue(3)` lalu Enter
 
-**Catatan**: Script console harus di-copy-paste lagi setiap kali refresh halaman.
+> ⚠️ **Catatan**: Script console harus di-copy-paste lagi setiap kali refresh halaman, tapi nilai yang sudah di-set akan tetap tersimpan selama session browser masih aktif.
 
 </details>
 
@@ -257,14 +263,24 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
    - Akan muncul 2 tombol:
      - Tombol hijau: **"🤖 Autofill Semua Kuesioner (Nilai: X)"** (X adalah nilai saat ini)
      - Tombol abu-abu: **"⚙️ Ubah Nilai"** (untuk mengubah nilai)
-   - *[Screenshot: Halaman KHS dengan tombol hijau dan tombol setting di pojok kanan atas]*
+
+<div align="center">
+
+<img width="800" alt="Halaman KHS dengan Tombol Autofill" src="https://github.com/user-attachments/assets/e7f66476-7875-4a37-b868-489d1020071f" />
+
+</div>
 
 3. **Mulai Autofill**
    - (Opsional) Jika ingin mengubah nilai, klik tombol **"⚙️ Ubah Nilai"** terlebih dahulu
    - Klik tombol hijau **"🤖 Autofill Semua Kuesioner"**
    - Akan muncul dialog konfirmasi yang menampilkan nilai yang akan digunakan: *"Apakah Anda yakin ingin mengisi semua kuesioner dengan nilai X (Label)? Tindakan ini tidak dapat dibatalkan."*
    - Klik **"OK"** untuk melanjutkan
-   - *[Screenshot: Dialog konfirmasi yang menampilkan nilai yang akan digunakan]*
+
+<div align="center">
+
+<img width="555" height="430" alt="Dialog konfirmasi yang menampilkan nilai yang akan digunakan" src="https://github.com/user-attachments/assets/3e8fdf51-cbd0-4b41-9119-961ca534b534" />
+
+</div>
 
 4. **Tunggu Proses Selesai**
    - Script akan otomatis membuka kuesioner pertama
@@ -275,6 +291,15 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
    - Proses ini akan terus berulang sampai semua kuesioner selesai
 
 5. **Monitor Progress (Opsional)**
+   
+<div align="center">
+
+[![Watch the video - Console Script Demo](https://img.youtube.com/vi/1vUPc-5p1j8/hqdefault.jpg)](https://youtu.be/1vUPc-5p1j8)
+
+*Klik gambar untuk melihat demo penggunaan console script*
+
+</div>
+
    - Buka Developer Console (F12) untuk melihat log proses
    - Akan muncul log seperti:
      ```
@@ -282,8 +307,9 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
      ✅ Mengisi 35 radio button dengan nilai 5 (Sangat setuju)
      ➡️ Pindah ke step berikutnya...
      ✅ Klik tombol Next
+     🚀 Step 2: Memulai autofill kuesioner dengan nilai 5...
+     ...
      ```
-   - *[Screenshot: Console log saat proses autofill berjalan]*
 
 6. **Selesai!**
    - Ketika semua kuesioner sudah terisi, script akan berhenti otomatis
@@ -323,43 +349,6 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
    - Pastikan nilai yang diisi sesuai keinginan (sesuai nilai yang sudah dikonfigurasi)
 
 </details>
-
-## 🖼️ Screenshot
-
-> **Catatan**: Screenshot berikut perlu ditambahkan oleh maintainer repository. Berikut adalah daftar screenshot yang direkomendasikan:
-
-### Screenshot yang Perlu Ditambahkan:
-
-1. **Halaman KHS dengan Tombol Autofill**
-   - Screenshot halaman KHS yang menampilkan tabel daftar mata kuliah
-   - Highlight 2 tombol di pojok kanan atas: tombol hijau "🤖 Autofill Semua Kuesioner (Nilai: X)" dan tombol abu-abu "⚙️ Ubah Nilai"
-   - **Deskripsi**: Tampilan awal setelah install script, menampilkan tombol autofill dan tombol setting yang muncul di halaman KHS
-
-2. **Tombol Setting & Dialog Konfirmasi**
-   - Screenshot tombol "⚙️ Ubah Nilai" dan dialog prompt untuk mengubah nilai
-   - Screenshot dialog konfirmasi sebelum memulai autofill yang menampilkan nilai yang akan digunakan
-   - Pesan contoh: "Apakah Anda yakin ingin mengisi semua kuesioner dengan nilai 3 (Cukup setuju)? Tindakan ini tidak dapat dibatalkan."
-   - **Deskripsi**: UI untuk konfigurasi nilai dan dialog konfirmasi untuk memastikan user benar-benar ingin melanjutkan
-
-3. **Form Kuesioner yang Terisi**
-   - Screenshot form kuesioner dengan semua radio button sudah tercentang sesuai nilai yang dikonfigurasi
-   - Menampilkan beberapa pertanyaan dan pilihan 1-5 dengan nilai yang terpilih (contoh: nilai 5 terpilih)
-   - **Deskripsi**: Tampilan form kuesioner yang sedang diisi otomatis oleh script dengan nilai yang sudah dikonfigurasi
-
-4. **Console Log Proses**
-   - Screenshot developer console yang menampilkan log proses autofill
-   - Menampilkan log seperti "🚀 Step 1: Memulai autofill...", "✅ Mengisi 35 radio button...", dll
-   - **Deskripsi**: Console log untuk monitoring progress autofill
-
-5. **Proses Multi-Step**
-   - Screenshot progress indicator di form kuesioner (step 1-5)
-   - Menampilkan step yang sedang aktif
-   - **Deskripsi**: Tampilan navigasi multi-step kuesioner
-
-6. **Hasil Setelah Selesai**
-   - Screenshot halaman KHS setelah semua kuesioner terisi
-   - Menampilkan bahwa tidak ada lagi link "Isi Kuesioner"
-   - **Deskripsi**: Tampilan akhir setelah semua kuesioner berhasil diisi
 
 ## 🔧 Troubleshooting
 
@@ -404,7 +393,7 @@ Metode ini cocok untuk testing atau kalau kamu tidak ingin install extension.
 
 **Solusi:**
 1. Tunggu beberapa detik, pastikan form sudah ter-load sepenuhnya
-2. Buka console (F12) dan jalankan manual: `fillAllWithFive()`
+2. Buka console (F12) dan jalankan manual: `fillAllWithValue()` (atau `fillAllWithValue(5)` untuk nilai 5)
 3. Cek apakah ada error di console
 4. Refresh halaman dan coba lagi
 5. Jika masih gagal, buka issue di GitHub dengan detail error
@@ -541,7 +530,7 @@ Script ini open source dan bebas untuk digunakan, dimodifikasi, dan didistribusi
 ### Credits & Attribution
 
 - **Script Development**: Dibuat dengan bantuan AI (Claude/ChatGPT)
-- **Repository Maintainer**: Aris
+- **Repository Maintainer**: [Aris](https://github.com/ariscandra)
 - **License**: Free to use and modify
 
 ---
@@ -550,14 +539,16 @@ Script ini open source dan bebas untuk digunakan, dimodifikasi, dan didistribusi
 
 Jika ada pertanyaan atau butuh bantuan:
 
-- **GitHub Issues**: Buka issue di repository ini
-- **Whatsapp**: wa.me/82141172579
+- **GitHub Issues**: [Buka issue di repo ini](https://github.com/ariscandra/FormAutoIsi/issues)
+- **WhatsApp**: [Hubungi via WhatsApp](https://wa.me/82141172579)
+
+---
 
 ---
 
 <div align="center">
 
-**Dibuat dengan ❤️ untuk memudahkan proses akademik mahasiswa Unmul**
+### Dibuat dengan ❤️ untuk memudahkan proses akademik mahasiswa Unmul
 
 **⚠️ Gunakan dengan bijak dan tanggung jawab**
 
