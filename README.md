@@ -510,7 +510,7 @@ Sebelum menggunakan script ini, pertimbangkan:
 
 ## 🤝 Kontribusi
 
-Script ini open source dan bebas untuk digunakan, dimodifikasi, dan didistribusikan. Jika kamu menemukan bug atau punya ide improvement, silakan:
+Script ini open source dan bebas untuk digunakan, dimodifikasi, dan didistribusikan. Jika kamu menemukan bug atau punya ide yang bisa ditingkatin, silakan:
 
 1. **Buka Issue di GitHub**
    - Jelaskan masalah atau ide yang kamu punya
