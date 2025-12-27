@@ -539,7 +539,7 @@ Script ini open source dan bebas untuk digunakan, dimodifikasi, dan didistribusi
 
 Jika ada pertanyaan atau butuh bantuan:
 
-- **GitHub Issues**: [Buka issue di repo ini](https://github.com/ariscandra/FormAutoIsi/issues)
+- **GitHub Issues**: [Buka issue di repo ini](https://github.com/ariscandra/FormAISAutofill/issues)
 - **WhatsApp**: [Hubungi via WhatsApp](https://wa.me/82141172579)
 
 ---
